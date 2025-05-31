@@ -75,11 +75,12 @@ int main(int argc, char** argv) {
         }
 
         // --- Check if label ------------------------------------
-        int asm_line_len = strlen(asm_line);                            // get length of asm_line to check for ":"
-        if (asm_line[asm_line_len - 1] == ':') {                           // it's a label!
-            asm_line[asm_line_len - 1] = '\0';                            // remove colon
+        size_t asm_line_len = strlen(asm_line);                         // get length of asm_line to check for ":"
+        if (asm_line[asm_line_len - 1] == ':') {                        // it's a label!
+            asm_line[asm_line_len - 1] = '\0';                          // remove colon
             trim(asm_line);
             addLabel(asm_line, word_address);                           // add label to label table with current word address
+            fprintf(stderr, "Label: %s\n", asm_line);
             continue;                                                   // exit while-loop (bypasses other checks)
         }
 
@@ -123,7 +124,7 @@ int main(int argc, char** argv) {
     }
 
     fclose(asm_file);                                                   // we edited this object during pass 1, so we'll close and reopen
-    // the file to get an unedited opject (to rewind the pointer)
+                                                                        // the file to get an unedited opject (to rewind the pointer)
 
 // --------------------------------------------------------------------------
 //    --- Second Pass - Enter label addresses, convert to machine code ---

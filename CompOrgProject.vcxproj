@@ -133,6 +133,7 @@
     <ClInclude Include="assembler.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="rectangle.asm" />
     <None Include="simple.asm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

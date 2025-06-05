@@ -133,6 +133,7 @@
     <ClInclude Include="assembler.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="asm_checker.py" />
     <None Include="rectangle.asm" />
     <None Include="simple.asm" />
   </ItemGroup>

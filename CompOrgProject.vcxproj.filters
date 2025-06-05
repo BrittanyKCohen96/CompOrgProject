@@ -31,5 +31,6 @@
     <None Include="rectangle.asm">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="asm_checker.py" />
   </ItemGroup>
 </Project>
